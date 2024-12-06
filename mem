@@ -1,0 +1,3 @@
+python --.py migaration
+python --.py migarte
+python --.py runserver dev.ce.bktencent.com:8000
