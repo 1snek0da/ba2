@@ -10,3 +10,18 @@ Unless required by applicable law or agreed to in writing, software distributed 
 an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
 specific language governing permissions and limitations under the License.
 """
+
+from django.conf.urls import url
+
+from . import views
+
+urlpatterns = (
+    url(r"^$", views.home),
+    url(r"^dev-guide/$", views.dev_guide),
+    url(r"^contact/$", views.contact),
+    url(r"biz-list",views.get_bizs_list),
+    url(r"set-list",views.get_sets_list),
+    url(r"module-list",views.get_modules_list),
+    url(r"host-list",views.get_hosts_list),
+    url(r"host-detail",views.get_host_detail)
+)

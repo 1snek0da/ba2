@@ -2,7 +2,7 @@
 """
 Tencent is pleased to support the open source community by making 蓝鲸智云PaaS平台社区版 (BlueKing PaaS Community
 Edition) available.
-Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+Copyright (C) 2017-2021 THL A29 Limited, a Tencent company. All rights reserved.
 Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 http://opensource.org/licenses/MIT
@@ -11,6 +11,28 @@ an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express o
 specific language governing permissions and limitations under the License.
 """
 
-# from django.contrib import admin
+from django.shortcuts import render
 
-# Register your models here.
+
+# 开发框架中通过中间件默认是需要登录态的，如有不需要登录的，可添加装饰器login_exempt
+# 装饰器引入 from blueapps.account.decorators import login_exempt
+def home(request):
+    """
+    首页
+    """
+
+    return render(request, "mako_application/index_home.mako")
+
+
+def dev_guide(request):
+    """
+    开发指引
+    """
+    return render(request, "mako_application/dev_guide.mako")
+
+
+def contact(request):
+    """
+    联系页
+    """
+    return render(request, "mako_application/contact.mako")
